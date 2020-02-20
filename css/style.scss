@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=vietnamese");
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +26,7 @@
         border-radius: 10px;
     }
     &__name {
-        font-size: 2.2em;
+        font-size: 2em;
         font-weight: 700
     }
     &__contact {
@@ -46,6 +47,7 @@
                 background-color: #1e1f26;
                 padding: 6px 12px;
                 color: #fff;
+                border-radius: 4px;
             }
         }
     }
@@ -78,9 +80,7 @@
         }
     }
     &__description {
-        font-family: 'EB Garamond', serif;
-        font-size: 1.15em;
-        text-align: justify;
+        font-size: 17px;
         strong{
             font-size: .9em;
         }
