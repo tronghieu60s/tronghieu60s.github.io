@@ -22,7 +22,7 @@
                 <div class="author">
                     <img class="author__avt" src="img/72218158_155736795524057_6151961848842289152_o.jpg" alt="">
                     <h1 class="author__name">Trần Trọng Hiếu</h1>
-                    <p class="author__description">Junior - Frontend/Backend</p>
+                    <p class="author__description">Frontend/Backend</p>
                     <ul class="author__contact">
                         <li><a href="https://fb.me/tronghieu60s" target="_blank"><i class="fa fa-facebook-square"
                                     aria-hidden="true"></i></a></li>
@@ -59,13 +59,14 @@
                     <ul class="list__deskill">
                         <li>Bootstrap, SASS, BEM</li>
                         <li>Jquery, ReactJS</li>
-                        <li>NodeJS, Express, EJS</li>
+                        <li>NodeJS (Express, EJS)</li>
                     </ul>
                     <h6 class="list__skill">Database</h6>
                     <ul class="list__deskill">
                         <li>MongoDB
                             <!--(SQL & NoSQL)-->
                         </li>
+                        <li>Firebase</li>
                     </ul>
                     <h6 class="list__skill">Version Control</h6>
                     <ul class="list__deskill">
@@ -79,10 +80,40 @@
                 </div>
                 <div class="list">
                     <h3 class="list__title">Project</h3>
-                    <a href="https://super-shortener.herokuapp.com/"><h6 class="list__skill">Super Shortened</h6></a>
-                    <p class="list__deskill">A shortened web link with NodeJS. Shorten URLs using invisible spaces.</p>
+                    <div>
+                        <a href="https://github.com/tronghieu60s/ncov-chatbot" target="_blank">
+                            <h6 class="list__skill">ChatBot COVID-19</h6>
+                        </a>
+                        <span class="list__date">March 2020</span>
+                        <ul class="list__deskill">
+                            <li>
+                                Coronavirus disease 2019 <a
+                                    href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019" target="_blank">(COVID-19)</a> is an infectious disease caused by severe
+                                acute respiratory syndrome coronavirus 2 (SARS-CoV-2).
+                            </li>
+                            <li>
+                                ChatBot Facebook Update Data Viruss Covid-2019.
+                            </li>
+                            <li>
+                                <a href="https://github.com/tronghieu60s/ncov-crawler-api" target="_blank"> API Data
+                                    Viruss Covid-2019 </a> crawler from The Ministry of Health of Vietnam
+                                (Node-crawler / Mongoose)
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="https://super-shortener.herokuapp.com/" target="_blank">
+                            <h6 class="list__skill">Super Shortened</h6>
+                        </a>
+                        <span class="list__date">November 2019</span>
+                        <ul class="list__deskill">
+                            <li><a href="https://en.wikipedia.org/wiki/Zero-width_joiner" target="_blank">The zero-width joiner (ZWJ)</a> is a non-printing character used in the computerized typesetting of some complex scripts such as the Arabic script or any Indic script.</li>
+                            <li>A shortened web link with NodeJS. Shorten URLs using invisible spaces.</li>
+                            <li>Using Unicode Character "ZERO WIDTH JOINER": <b class="text-danger">U+200C</b> and <b class="text-danger">U+200D</b></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="list w-75">
+                <div class="list list--contact">
                     <h3 class="list__title">Contact</h3>
                     <form class="form-group contact" action="https://formspree.io/tronghieu60s@gmail.com" method="POST">
                         Name: <input type="text" name="Name" class="form-control" aria-describedby="helpId">
@@ -94,8 +125,6 @@
             </div>
         </div>
     </div>
-    <!-- Script -->
-    <script src="vendor/js/bootstrap.min.js"></script>
 </body>
 
 </html>
