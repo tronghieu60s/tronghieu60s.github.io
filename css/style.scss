@@ -54,8 +54,8 @@ a{
             &__avt {
                 width: 50% !important;
             }
-            &__info{
-                display: block;
+            &__name {
+                font-size: 2em !important;
             }
         }
     }
@@ -71,20 +71,30 @@ a{
         border-radius: 10px;
         margin-right: 5px;
     }
+    &__description {
+        margin-bottom: 0;
+    }
     &__name {
-        font-size: 2em;
+        font-size: 1.7em;
         font-weight: 700
     }
     &__contact {
         list-style-type: none;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         margin-bottom: 40px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 1000;
         @media (min-width: 768px) {
+            position: relative;
+            flex-direction: row;
             justify-content: flex-end !important;
             margin-bottom: 0 !important;
         }
         li {
+            margin-top: 10px;
             margin-right: 6px;
             font-size: 1.2em;
             text-align: center;
