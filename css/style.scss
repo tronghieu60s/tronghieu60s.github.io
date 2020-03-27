@@ -39,6 +39,7 @@ a{
 }
 .author {
     display: flex;
+    justify-content: space-around;
     text-align: center;
     margin: 2em 0 1em 0;
     @media (min-width: 768px) {
@@ -50,6 +51,9 @@ a{
             text-align: right;
             margin: inherit;
             position: fixed;
+            &__avt {
+                width: 50% !important;
+            }
             &__info{
                 display: block;
             }
@@ -61,7 +65,7 @@ a{
         justify-content: center;
     }
     &__avt {
-        width: 50%;
+        width: 35%;
         margin-bottom: 15px;
         padding: 8px;
         border-radius: 10px;
@@ -148,3 +152,24 @@ a{
         }
     }
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f4f5f7;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+    background: #2b2e34;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
