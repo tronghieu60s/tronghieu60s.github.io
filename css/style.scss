@@ -57,6 +57,9 @@ a{
             &__name {
                 font-size: 2em !important;
             }
+            &__description {
+                font-size: 1em !important;
+            }
         }
     }
     &__info{
@@ -72,10 +75,11 @@ a{
         margin-right: 5px;
     }
     &__description {
+        font-size: .9em;
         margin-bottom: 0;
     }
     &__name {
-        font-size: 1.7em;
+        font-size: 1.5em;
         font-weight: 700
     }
     &__contact {
