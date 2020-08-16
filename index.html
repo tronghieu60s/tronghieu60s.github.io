@@ -20,12 +20,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="author">
-                    <img class="author__avt" src="img/IMG_20200327_163738.jpg" alt="">
+                <div class="author mt-5">
                     <div class="author__info">
                         <h1 class="author__name">Trần Trọng Hiếu</h1>
                         <p class="author__description">Frontend/Backend</p>
-                        <ul class="author__contact">
+                        <ul class="author__social">
                             <li><a href="https://fb.me/tronghieu60s" target="_blank"><i class="fa fa-facebook-square"
                                         aria-hidden="true"></i></a></li>
                             <li><a href="https://instagram.com/tronghieu_60s" target="_blank"><i class="fa fa-instagram"
@@ -39,6 +38,18 @@
                                         aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
+                </div>
+                <div class="list list--contact mt-5 d-none d-md-block">
+                    <h3 class="list__title">Contact</h3>
+                    <form class="form-group contact" action="https://formspree.io/tronghieu60s@gmail.com" method="POST">
+                        <label>Name: </label>
+                        <input type="text" name="Name" class="form-control" aria-describedby="helpId">
+                        <label class="mt-2 mb-1">Email: </label>
+                        <input type="email" name="Email" class="form-control" aria-describedby="helpId">
+                        <label class="mt-2 mb-1">Content:</label>
+                        <textarea name="Content" class="form-control" aria-describedby="helpId"></textarea>
+                        <input class="btn btn-dark mt-2" type="submit" value="Send">
+                    </form>
                 </div>
             </div>
             <div class="col-md-6 mt-3">
@@ -63,8 +74,8 @@
                     </ul>
                     <h6 class="list__skill">Frameworks & platforms</h6>
                     <ul class="list__deskill">
-                        <li>Bootstrap, SASS, BEM</li>
-                        <li>Jquery, ReactJS</li>
+                        <li>Bootstrap, SASS</li>
+                        <li>ReactJS, Redux, NextJS</li>
                         <li>NodeJS (Express, EJS)</li>
                         <li>ElectronJS</li>
                     </ul>
@@ -138,7 +149,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="list list--contact">
+                <div class="list list--contact mt-5 d-md-none">
                     <h3 class="list__title">Contact</h3>
                     <form class="form-group contact" action="https://formspree.io/tronghieu60s@gmail.com" method="POST">
                         <label>Name: </label>
@@ -152,6 +163,9 @@
                 </div>
             </div>
         </div>
+        <footer class="my-5" style="font-size: 14px;">
+            &copy; 2020 | Trần Trọng Hiếu
+        </footer>
     </div>
 </body>
 
