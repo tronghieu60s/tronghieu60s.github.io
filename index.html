@@ -19,16 +19,20 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="author mt-5">
+            <div class="col-md-6">
+                <div class="author mt-md-5 mb-4">
                     <div class="author__info">
-                        <h1 class="author__name">Trần Trọng Hiếu</h1>
-                        <p class="author__description">Frontend/Backend</p>
-                        <a href="./source/TranTrongHieu_CV.pdf" class="mt-2">
-                            <button type="button" class="btn btn-dark btn-sm">
-                                <i class="fa fa-download" aria-hidden="true"></i> My CV
-                            </button>
-                        </a>
+                        <div class="d-flex">
+                            <div>
+                                <h1 class="author__name">Trần Trọng Hiếu</h1>
+                                <p class="author__description">Frontend/Backend</p>
+                            </div>
+                            <a href="./source/TranTrongHieu_CV.pdf" class="mt-2 ml-5">
+                                <button type="button" class="btn btn-dark btn-sm">
+                                    <i class="fa fa-download" aria-hidden="true"></i> My CV
+                                </button>
+                            </a>
+                        </div>
                         <ul class="author__social">
                             <li><a href="https://fb.me/tronghieu60s" target="_blank"><i class="fa fa-facebook-square"
                                         aria-hidden="true"></i></a></li>
@@ -44,20 +48,6 @@
                         </ul>
                     </div>
                 </div>
-                <div class="list list--contact mt-5 d-none d-md-block">
-                    <h3 class="list__title">Contact</h3>
-                    <form class="form-group contact" action="https://formspree.io/tronghieu60s@gmail.com" method="POST">
-                        <label>Name: </label>
-                        <input type="text" name="Name" class="form-control" aria-describedby="helpId">
-                        <label class="mt-2 mb-1">Email: </label>
-                        <input type="email" name="Email" class="form-control" aria-describedby="helpId">
-                        <label class="mt-2 mb-1">Content:</label>
-                        <textarea name="Content" class="form-control" aria-describedby="helpId"></textarea>
-                        <input class="btn btn-dark mt-2" type="submit" value="Send">
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-6 mt-3">
                 <div class="list">
                     <h3 class="list__title">Summary</h3>
                     <p class="list__description">
@@ -101,8 +91,20 @@
                         <li>Sublime Text</li>
                     </ul>
                 </div>
+            </div>
+            <div class="col-md-6 mt-3">
                 <div class="list">
                     <h3 class="list__title">Project</h3>
+                    <div>
+                        <a href="https://play.google.com/store/apps/details?id=com.tronghieuit.toeicew" target="_blank">
+                            <h6 class="list__skill">600 Essential Words Toeic App</h6>
+                        </a>
+                        <span class="list__date">February 2021</span>
+                        <ul class="list__deskill">
+                            <li>The app learns 600 essential toeic vocabulary words with a friendly interface and diverse practice modes.</li>
+                            <li>Technology: React Native (Expo), Tailwind CSS, SQLite</li>
+                        </ul>
+                    </div>
                     <div>
                         <a href="https://expense-mgt-app.herokuapp.com/" target="_blank">
                             <h6 class="list__skill">Expense Management</h6>
@@ -165,7 +167,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="list list--contact mt-5 d-md-none">
+                <div class="list list--contact mt-5">
                     <h3 class="list__title">Contact</h3>
                     <form class="form-group contact" action="https://formspree.io/tronghieu60s@gmail.com" method="POST">
                         <label>Name: </label>
