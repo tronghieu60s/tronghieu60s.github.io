@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% include sidebar.html %}
+<section class="md-home">
+    <div class="md-posts">
+        {% for post in site.posts %}
+        <div class="md-posts-item">
+            <a href="{{ post.url | prepend: site.baseurl }}" class="md-posts-item-cover">
+                <div class="md-posts-item-img" style="background-image: url('public/images/{{ post.image }}');">
+                </div>
+            </a>
+            <div class="md-posts-item-content">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="md-posts-item-title">
+                    {{ post.title }}
+                </a>
+                <div class="md-posts-item-summary">
+                    {% if post.description %}
+                    {{ post.description }}
+                    {% else %}
+                    {% assign content = post.content | strip_html | strip %}
+                    {{ content | slice: 0, 100 }}
+                    {% if content.size > 100 %}...{% endif %}
+                    {% endif %}
+                </div>
+                <div class="md-posts-item-info">
+                    <span>{{ post.date | date: "%b %d" }} · {{ post.content.size | divided_by: 300 }} min read <i
+                            class="fa fa-star" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="md-pagination">
+        <a href="">← Newer</a>
+        <div class="md-pagination-page">Page: 1 of 2</div>
+        <a class="active" href="">Older →</a>
+    </div>
+</section>

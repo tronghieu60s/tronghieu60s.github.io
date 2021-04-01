@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<section class="md-container">
+    {% include topbar.html %}
+    <section class="md-blog_single">
+        <h1 class="md-blog_single-title">{{ page.title }}</h1>
+        <div class="md-blog_single-info">{{ page.date | date: "%B %d" }} · {{ page.content.size | divided_by: 300 }} min
+            read <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+        <div class="md-blog_single-content">
+            {{ page.content }}
+        </div>
+        <div class="md-tags">
+            {% for tag in page.tags %}
+            <a href="categories.html" class="md-tags-item">
+                {{ tag }}
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+    <div class="md-posts">
+        {% assign posts = site.posts | slice: 0, 3 %}
+        {% for post in posts %}
+        <div class="md-posts-item">
+            <a href="{{ post.url | prepend: site.baseurl }}" class="md-posts-item-cover">
+                <div class="md-posts-item-img" style="background-image: url('/public/images/{{ post.image }}');">
+                </div>
+            </a>
+            <div class="md-posts-item-content">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="md-posts-item-title">
+                    {{ post.title }}
+                </a>
+                <div class="md-posts-item-summary">
+                    {% if post.description %}
+                    {{ post.description }}
+                    {% else %}
+                    {% assign content = post.content | strip_html | strip %}
+                    {{ content | slice: 0, 100 }}
+                    {% if content.size > 100 %}...{% endif %}
+                    {% endif %}
+                </div>
+                <div class="md-posts-item-info">
+                    <span>{{ post.date | date: "%b %d" }} · {{ post.content.size | divided_by: 300 }} min read <i
+                            class="fa fa-star" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<script>
+    // Posts Random
+    const posts = document.querySelector(".md-posts");
+    for (let i = 0; i < posts.children.length; i++) {
+        posts.appendChild(posts.children[Math.random() * i | 0]);
+    }
+</script>

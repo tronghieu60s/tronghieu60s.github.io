@@ -48,10 +48,6 @@ a {
 
 .md-wrapper {
   width: 100%;
-  display: flex;
-  @include SM {
-    flex-direction: column;
-  }
 
   // --- Layout
   .md-sidebar {
@@ -197,10 +193,9 @@ a {
     width: calc(100% - #{$width-sidebar});
     line-height: 150%;
     padding-top: 20px;
-    padding-bottom: 20px;
     margin-left: auto;
     @include SM {
-      max-width: 100%;
+      width: 100%;
       padding-bottom: 0px;
     }
   }

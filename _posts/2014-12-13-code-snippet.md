@@ -2,7 +2,9 @@
 layout: post
 title:  "Post With A Code Snippet"
 date:   2014-12-13
+description: This is a post description for meta purposes. This is also the excerpt of the article that shows up on the index/home page. Change this in the post YAML.
 image: "cover4.jpg"
+tags: jekyll blog github-page
 ---
 
 <p class="intro"><span class="dropcap">Y</span>ou'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes! To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
