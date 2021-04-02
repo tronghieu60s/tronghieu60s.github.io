@@ -6,7 +6,11 @@
 <body>
     <div class="md-wrapper">
         {{ content }}
-        {% include footer.html %}
+        <footer class="md-footer">
+            <div class="md-footer-copyright">
+                {% include footer.html %}
+            </div>
+        </footer>
     </div>
 
     <script>

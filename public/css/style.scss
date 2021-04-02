@@ -66,6 +66,16 @@ a {
     }
     &-user {
       padding: 20px;
+      &-name {
+        display: block;
+        color: #000;
+        font-size: 1.6em;
+        font-weight: 700;
+        transition: 0.4s;
+        &:hover {
+          color: $color_url;
+        }
+      }
       &-avatar {
         width: $size-avatar;
         height: $size-avatar;
@@ -134,7 +144,7 @@ a {
         }
       }
       &-copyright {
-        font-size: 14px;
+        font-size: 13px;
         margin-top: 10px;
         text-align: center;
       }
@@ -171,7 +181,7 @@ a {
     background-color: $color-background;
     font-family: "Space Mono", monospace;
     padding: 15px 0px;
-    margin-top: 20px;
+    margin-top: 50px;
     @include SM {
       display: block;
     }
@@ -194,16 +204,18 @@ a {
     line-height: 150%;
     padding-top: 20px;
     margin-left: auto;
+    @media (min-width: #{$xs-width}) {
+      margin-bottom: 20px;
+    }
     @include SM {
       width: 100%;
       padding-bottom: 0px;
     }
   }
   .md-blog_single {
-    width: 550px;
+    width: 700px;
     margin: auto;
     font-family: "Montserrat", sans-serif;
-    padding: 20px 0;
     @include SM {
       width: 87%;
     }
@@ -228,6 +240,20 @@ a {
         font-size: 10px;
       }
     }
+    &-image {
+      width: 100%;
+      height: 400px;
+      background-size: cover;
+      background-position: 50% 50%;
+      margin-top: 20px;
+      border-radius: 10px;
+      @include SM {
+        height: 300px;
+      }
+      @include XS {
+        height: 200px;
+      }
+    }
     &-content {
       line-height: 180%;
       text-align: justify;
@@ -239,18 +265,39 @@ a {
     }
   }
   .md-categories {
-    width: 100%;
+    width: 700px;
+    margin: auto;
+    @include SM {
+      width: 87%;
+    }
     &-title {
-      text-align: center;
       font-size: $size-title;
       font-family: "Space Mono", monospace;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       &:before {
         content: "#";
         color: #ccc;
         margin-right: 8px;
         margin-left: -20px;
         font-weight: normal;
+      }
+    }
+    .md-posts {
+      display: block;
+      &-item {
+        width: 100%;
+        margin-bottom: 20px;
+        &-title {
+          font-size: 1.15em;
+          font-weight: 600;
+          color: $color_url;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        &-info {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -316,6 +363,12 @@ a {
         margin-top: 5px;
         i.fa.fa-star {
           font-size: 10px;
+        }
+      }
+      &-dot {
+        &:before {
+          content: "·";
+          margin: 0px 3px;
         }
       }
     }

@@ -1,5 +1,6 @@
-<footer class="md-footer">
-    <div class="md-footer-copyright">2021 © Trọng Hiếu.<br />Created with <a
-            href="https://github.com/tronghieu60s/mediodas-blog">Mediodas</a>.
-    </div>
-</footer>
+{% assign siteYear = 2021 %}
+{% assign siteAuthor = "Mediodas" %}
+{% assign siteAuthorUrl = "http://github.com/tronghieu60s" %}
+
+{{ siteYear }} © {{ site.title }}.<br />
+Created with <a href="{{ siteAuthorUrl }}" target="_blank">{{ siteAuthor }}</a>.

@@ -1,3 +1,40 @@
-# site settings
-title: Mediodas
-speed_read: 300 # words per minute
+# --- Site Settings ---
+title: Trọng Hiếu
+slogan: tronghieuit.com
+description: I am a web developer focusing on front-end development. Always hungry to keep learning.
+
+read_speed: 300 # words per minute
+excerpt_len: 100 # length of expert post
+
+social:
+  # username
+  facebook: tronghieu60s
+  instagram: tronghieu60s
+  linkedin: tronghieu60s
+  github: tronghieu60s
+  #email address
+  email: tronghieu60s@gmail.com
+
+# --- Jekyll Settings ---
+
+# some base format permalink: date, pretty, ordinal, weekdate, none
+# more: https://jekyllrb.com/docs/permalinks/
+permalink: pretty
+
+# jekyll plugins
+# more: https://jekyllrb.com/docs/plugins/
+plugins: [jekyll-paginate]
+
+# jekyll-paginate
+# more: https://jekyllrb.com/docs/pagination/
+paginate: 6
+paginate_path: "/page/:num"
+
+# jekyll collections
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:slug

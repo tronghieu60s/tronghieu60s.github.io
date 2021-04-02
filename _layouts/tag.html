@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<section class="md-container">
+    {% include topbar.html %}
+    <section class="md-categories">
+        <h1 class="md-categories-title">{{ page.tag }}</h1>
+        <div class="md-posts">
+            {% for post in site.posts %}
+            {% if post.tags contains page.tag %}
+            <div class="md-posts-item">
+                <div class="md-posts-item-content">
+                    <div class="md-posts-item-info">
+                        <span>
+                            {{ post.date | date: "%d-%m-%Y" }}
+                            <span class="md-posts-item-dot"></span>
+                            {{ post.content.size | divided_by: site.read_speed }} min read
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="{{ post.url }}" class="md-posts-item-title">
+                        {{ post.title }}
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</section>
