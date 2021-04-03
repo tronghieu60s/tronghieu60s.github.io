@@ -16,7 +16,6 @@ layout: default
                             <span class="md-posts-item-dot"></span>
                             {{ post.content.size | divided_by: site.read_speed }} min read
                             <i class="fa fa-star" aria-hidden="true"></i>
-                            <span class="md-posts-item-dot"></span>
                             {% for category in post.categories %}
                             <span class="md-posts-item-dot"></span>
                             <a href="/categories?name={{ category }}">{{ category }}</a>

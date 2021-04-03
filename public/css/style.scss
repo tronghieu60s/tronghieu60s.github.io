@@ -57,6 +57,23 @@ ol {
   display: flex;
   flex-direction: column;
 
+  .md-404 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Space Mono", monospace;
+    text-align: center;
+    padding: 0 30px;
+    h1 {
+      font-size: 5em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  }
+
   // --- Layout
   .md-sidebar {
     position: fixed;
