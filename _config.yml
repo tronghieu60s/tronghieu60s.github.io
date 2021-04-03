@@ -29,12 +29,3 @@ plugins: [jekyll-paginate]
 # more: https://jekyllrb.com/docs/pagination/
 paginate: 6
 paginate_path: "/page/:num"
-
-# jekyll collections
-collections:
-  pages:
-    output: true
-    permalink: /:name
-  posts:
-    output: true
-    permalink: /:year/:month/:day/:slug

@@ -5,11 +5,10 @@ layout: default
 <section class="md-container">
     {% include topbar.html %}
     <section class="md-categories">
-        <h1 class="md-categories-title">{{ page.tag }}</h1>
+        <h1 class="md-categories-title"></h1>
         <div class="md-posts">
             {% for post in site.posts %}
-            {% if post.tags contains page.tag %}
-            <div class="md-posts-item">
+            <div class="md-posts-item" tags="{{ post.tags | join: ',' }}" style="display: none;">
                 <div class="md-posts-item-content">
                     <div class="md-posts-item-info">
                         <span>
@@ -24,8 +23,25 @@ layout: default
                     </a>
                 </div>
             </div>
-            {% endif %}
             {% endfor %}
         </div>
     </section>
 </section>
+
+<script>
+    const tagName = getQueryStringValue("name").trim();
+    const tagTitle = document.querySelector(".md-categories-title");
+    tagTitle.innerText = tagName;
+
+    let havePosts = false;
+    const postsElm = document.querySelectorAll('[tags]');
+    postsElm.forEach(post => {
+        const tags = post.getAttribute("tags").split(",");
+        if (tags.indexOf(tagName) !== -1) {
+            havePosts = true;
+            post.style.display = "block";
+        }
+    });
+
+    if (!havePosts) window.location.href = "/404"
+</script>
