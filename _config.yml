@@ -17,9 +17,9 @@ social:
 
 # --- Jekyll Settings ---
 
-# some base format permalink: date, pretty, ordinal, weekdate, none
+# jekyll permalinks
 # more: https://jekyllrb.com/docs/permalinks/
-permalink: pretty
+permalink: /:year/:month/:day/:slug/
 
 # jekyll plugins
 # more: https://jekyllrb.com/docs/plugins/

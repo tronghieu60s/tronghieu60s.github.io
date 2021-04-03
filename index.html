@@ -15,6 +15,11 @@ title: Trang Chủ
                 <div class="md-posts-item-img" style="background-image: url('{{ post.image }}');">
                 </div>
             </a>
+            <div class="md-posts-categories">
+                {% for category in post.categories %}
+                <a href="/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
+                {% endfor %}
+            </div>
             <div class="md-posts-item-content">
                 <a href="{{ post.url }}" class="md-posts-item-title">
                     {{ post.title }}

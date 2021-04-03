@@ -13,6 +13,11 @@ layout: default
             site.read_speed }} min read
             <i class="fa fa-star" aria-hidden="true"></i>
         </div>
+        <div class="md-posts-categories" style="position: static; margin-top: 4px;">
+            {% for category in page.categories %}
+            <a href="/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
+            {% endfor %}
+        </div>
         <div class="md-blog_single-image" style="background-image: url('{{ page.image }}');"></div>
         <div class="md-blog_single-content">
             {{ page.content }}

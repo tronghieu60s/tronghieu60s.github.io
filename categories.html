@@ -8,7 +8,7 @@ layout: default
         <h1 class="md-categories-title"></h1>
         <div class="md-posts">
             {% for post in site.posts %}
-            <div class="md-posts-item" tags="{{ post.tags | join: ',' }}" style="display: none;">
+            <div class="md-posts-item" categories="{{ post.categories | join: ',' }}" style="display: none;">
                 <div class="md-posts-item-content">
                     <div class="md-posts-item-info">
                         <span>
@@ -16,11 +16,6 @@ layout: default
                             <span class="md-posts-item-dot"></span>
                             {{ post.content.size | divided_by: site.read_speed }} min read
                             <i class="fa fa-star" aria-hidden="true"></i>
-                            <span class="md-posts-item-dot"></span>
-                            {% for category in post.categories %}
-                            <span class="md-posts-item-dot"></span>
-                            <a href="/categories?name={{ category }}">{{ category }}</a>
-                            {% endfor %}
                         </span>
                     </div>
                     <a href="{{ post.url }}" class="md-posts-item-title">
@@ -34,16 +29,16 @@ layout: default
 </section>
 
 <script>
-    const tagName = getQueryStringValue("name").trim();
-    const tagTitle = document.querySelector(".md-categories-title");
-    tagTitle.innerText = `Tag: ${tagName}`;
-    document.title = `${tagName} | {{ site.title }}`;
+    const categoryName = getQueryStringValue("name").trim();
+    const categoryTitle = document.querySelector(".md-categories-title");
+    categoryTitle.innerText = `Category: ${categoryName}`;
+    document.title = `${categoryName} | {{ site.title }}`;
 
     let havePosts = false;
-    const postsElm = document.querySelectorAll('[tags]');
+    const postsElm = document.querySelectorAll('[categories]');
     postsElm.forEach(post => {
-        const tags = post.getAttribute("tags").split(",");
-        if (tags.indexOf(tagName) !== -1) {
+        const categories = post.getAttribute("categories").split(",");
+        if (categories.indexOf(categoryName) !== -1) {
             havePosts = true;
             post.style.display = "block";
         }
