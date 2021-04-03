@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Coding Interview University</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3286b405-101e-45cd-a30b-7ac90746ab7f" class="page sans"><header><h1 class="page-title">Coding Interview University</h1></header><div class="page-body"><h2 id="ea75f5cf-ab17-428a-baac-cf22c3ee93d1" class="">1. Big O Notation</h2><h3 id="a14ca4b9-8771-4f5e-b651-24872dd620b6" class="">1. Khái niệm</h3><div id="eb342ce0-a8b5-454d-a400-d79c6e7ad62a" class="column-list"><div id="101300cb-6647-49d8-80ea-8241d05438b6" style="width:68.75%" class="column"><p id="d3fdad94-c3c0-4ccd-8101-ec0cf5a60015" class="">Một <strong>thuật toán</strong> nhanh và hiệu quả <strong>không thể đo lường qua thời gian thực</strong>, tức là không thể đo bằng giây hoặc phút, điều này là do phần cứng máy tính. Với <strong>cùng một chương trình</strong>, cái của bạn có thể chạy <strong>nhanh hoặc chậm</strong> hơn người khác là do <strong>phần cứng máy tính</strong>.</p></div><div id="42621a25-35bd-42fe-b80d-209e33566b76" style="width:31.25%" class="column"><figure id="f7bac319-60cd-43fe-b44c-334529b201a2" class="image"><a href="https://media.giphy.com/media/LbSdXQbS0XVVC/giphy.gif"><img style="width:288px" src="https://media.giphy.com/media/LbSdXQbS0XVVC/giphy.gif"/></a></figure></div></div><p id="7dba2511-3fed-4ddb-baa5-6439d5a4da87" class="">Vậy, làm thế nào để<strong> so sánh</strong> hai thuật toán khác nhau?</p><p id="fb9c276c-e1d6-4a6b-ad36-99edc54af961" class="">Điều này có thể được đo lường qua một khái niệm gọi là <strong>BigO Notation</strong>.</p><h3 id="4d1db577-7dcc-4bd2-9d4c-491e4f29db51" class="">2. Giải thích</h3><div id="b286c3ca-1156-42d3-b349-25cb1cc83796" class="column-list"><div id="abf4ece8-3ad4-410f-bc1a-c9bb898053e8" style="width:68.75%" class="column"><p id="6fc6d637-62c3-4938-941a-d2fe4cf56a24" class="">Để đếm <strong>số ký tự</strong> trong một <strong>chuỗi c</strong>ách dễ nhất là <strong>duyệt qua từng phần tử và đếm từng cái một</strong>. Bằng cách sử dụng phương pháp này thì:</p><blockquote id="527132e3-c748-4c5b-a663-567e03b83d0d" class=""><strong>Thời gian cần thiết</strong> đi qua toàn bộ chuỗi <strong>tỷ lệ thuận</strong> với <strong>số lượng phần tử</strong>.</blockquote><p id="ef5c138c-9953-4a20-869a-48dada43a7c8" class=""><strong>Đếm số ký tự</strong> trong một chuỗi <strong>20 ký tự</strong> sẽ <strong>chậm gấp 2 lần</strong> để đếm số ký tự trong trong một chuỗi <strong>10 ký tự</strong>.</p><p id="62259f7a-668f-4f73-86e4-e177652bf1bb" class="">Thời gian chạy sẽ <strong>tăng tuyến tính</strong> với chiều dài đầu vào.</p></div><div id="0c406cb3-dda2-4bfc-80c4-540c2b9557e3" style="width:31.25%" class="column"><figure id="71cff6c7-3c78-4795-912d-129081e21379" class="image"><a href="https://i.imgur.com/AJ3gFcK.jpg"><img src="https://i.imgur.com/AJ3gFcK.jpg"/></a><figcaption>n là số lượng phần tử, độ phức tạp của thuật toán sẽ có giá trị là O(n).</figcaption></figure></div></div><div id="00f22ad5-7dc3-4635-b94a-4037beb3cab7" class="column-list"><div id="a70898f9-b2ae-4657-abd8-cb1981b0de69" style="width:68.75%" class="column"><p id="62f625f2-4400-4013-b1f7-4e9600856c0f" class="">Độ phức tạp O(n^2) <strong>chậm hơn</strong> đối với O(n) đó là do<strong> số phần tử n gia tăng</strong>, cuối cùng thì O(n^2) sẽ mất nhiều thời gian hơn.</p><blockquote id="b85f51c7-6686-4d9a-b3e4-653fab3ad214" class="">Nếu làm việc với một <strong>lượng lớn dữ liệu n</strong>, thuật toán có độ phức tạp là O(n^2) có thể làm <strong>chậm chương trình</strong> của bạn. Nhưng đối với <strong>kích thước đầu vào nhỏ</strong>, có thể bạn sẽ <strong>không cảm thấy gì</strong>.</blockquote></div><div id="7bdc669b-da4a-415a-9fa1-7c292bfa15ca" style="width:31.25%" class="column"><figure id="1ccfe88a-1b27-4105-8eef-6c95a6a90191" class="image"><a href="https://i.imgur.com/aW5PBel.jpg"><img style="width:288px" src="https://i.imgur.com/aW5PBel.jpg"/></a></figure></div></div><h3 id="84d359f3-1471-4784-a619-f393517e8c1b" class="">3. Trường hợp tốt nhất và trường hợp tệ nhất</h3><p id="4d0fb9b4-b0e6-4d10-9628-2b3adaf4b8b8" class="">Ví dụ với thuật toán <strong>Tìm Kiếm Tuyến Tính (Linear Search).</strong></p><p id="536eae32-0c2f-4118-812d-48325a29d11d" class="">Về cơ bản thuật toán này sẽ <strong>đi qua tất cả các phần tử</strong> trong mảng và <strong>so sánh với giá trị cần tìm</strong>, khi tìm thấy sẽ dừng chương trình và trả về kết quả.</p><figure id="0b8a8866-97d2-40e3-82f2-0bd8ece775e4" class="image"><a href="https://i.imgur.com/Ph5Ce1H.gif"><img style="width:480px" src="https://i.imgur.com/Ph5Ce1H.gif"/></a></figure><p id="261ab131-488d-4f6c-bc60-57493a37727a" class="">Ví dụ chúng ta có mảng với các giá trị như sau: <mark class="highlight-red">[ </mark><span style="border-bottom:0.05em solid"><mark class="highlight-red">1</mark></span><mark class="highlight-red"> , 5 , 6 , </mark><span style="border-bottom:0.05em solid"><mark class="highlight-red">8</mark></span><mark class="highlight-red"> ]</mark></p><p id="7aae9f64-3296-4edd-93de-71b24f83a7af" class="">Ở <strong>trường hợp tốt nhất</strong> nếu phần tử cần tìm kiếm <strong>ở đầu mảng</strong> [ <span style="border-bottom:0.05em solid"><mark class="highlight-red">1</mark></span><mark class="highlight-red"> </mark>, ... ], chúng ta sẽ tìm thấy nó ở bước đầu tiên, ở đây thuật toán sẽ có độ phức tạp là O(1).</p><p id="c59e5175-da54-422e-9a66-1c4f99cc8b03" class="">Ngược lại, ở <strong>trường hợp tệ nhất </strong>phần tử cần tìm kiếm<strong> ở cuối mảng</strong> [ ... , <mark class="highlight-red"><span style="border-bottom:0.05em solid">8</span></mark> ], nó sẽ <strong>duyệt qua tất cả các phần tử trong mảng</strong> và giá trị cần tìm sẽ ở cuối cùng, độ phức tạp sẽ là O(n).</p><p id="21701d4b-325a-442a-a0d7-c754c5a2f7d1" class="">
+</p><p id="57d46a7a-fa42-4b6d-8a99-a4efb53380a9" class="">Video:</p><ul id="c767befe-e28f-4bc1-8570-8c41cf9406d7" class="bulleted-list"><li><a href="https://www.youtube.com/watch?v=iOq5kSKqeR4">https://www.youtube.com/watch?v=iOq5kSKqeR4</a></li></ul></div></article></body></html>
