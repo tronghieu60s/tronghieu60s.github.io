@@ -2,32 +2,67 @@
 layout: default
 ---
 
-<section class="md-container">
-    {% include topbar.html %}
-    <section class="md-blog_single">
-        <h1 class="md-blog_single-title">{{ page.title }}</h1>
-        <div class="md-blog_single-info">
-            {{ page.date | date: "%B %d" }}
-            <span class="md-posts-item-dot"></span>
-            {{ page.content.size | divided_by:
-            site.read_speed }} min read
-            <i class="fa fa-star" aria-hidden="true"></i>
-        </div>
-        <div class="md-posts-categories" style="position: static; margin-top: 4px;">
-            {% for category in page.categories %}
-            <a href="/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
-            {% endfor %}
-        </div>
-        <div class="md-blog_single-image" style="background-image: url('{{ page.image }}');"></div>
-        <div class="md-blog_single-content">
-            {{ page.content }}
-        </div>
-        <div class="md-tags">
-            {% for tag in page.tags %}
-            <a href="/tags?name={{ tag }}" class="md-tags-item">
-                {{ tag }}
-            </a>
-            {% endfor %}
-        </div>
-    </section>
+<section class="md-blog_single">
+    <h1 class="md-blog_single-title">{{ page.title }}</h1>
+    <div class="md-blog_single-info">
+        {{ page.date | date: "%B %d" }}
+        <span class="md-posts-item-dot"></span>
+        {{ page.content.size | divided_by:
+        site.read_speed }} min read
+        <i class="fa fa-star" aria-hidden="true"></i>
+    </div>
+    <div class="md-posts-categories" style="position: static; margin-top: 4px;">
+        {% for category in page.categories %}
+        <a href="/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
+        {% endfor %}
+    </div>
+    <div class="md-blog_single-image" style="background-image: url('{{ page.image }}');"></div>
+    <div class="md-blog_single-content">
+        {{ page.content }}
+    </div>
+    <div class="md-tags">
+        {% for tag in page.tags %}
+        <a href="/tags?name={{ tag }}" class="md-tags-item">
+            {{ tag }}
+        </a>
+        {% endfor %}
+    </div>
 </section>
+
+<div class="md-related">
+    <h3 class="md-related-title">Related Posts</h3>
+    <div class="md-posts">
+        {% assign relatedPosts = site.related_posts | slice: 0, 3 %}
+        {% for post in relatedPosts %}
+        <div class="md-posts-item">
+            <a href="{{ post.url }}" class="md-posts-item-cover">
+                <div class="md-posts-item-img" style="background-image: url('{{ post.image }}');">
+                </div>
+            </a>
+            <div class="md-posts-categories">
+                {% for category in post.categories %}
+                <a href="/categories?name={{ category }}" class="md-posts-categories-item">{{ category }}</a>
+                {% endfor %}
+            </div>
+            <div class="md-posts-item-content">
+                <a href="{{ post.url }}" class="md-posts-item-title">
+                    {{ post.title }}
+                </a>
+                <div class="md-posts-item-summary">
+                    {% assign content = post.excerpt | strip_html | strip %}
+                    {{ content | slice: 0, site.excerpt_len }}
+                    {% if content.size > site.excerpt_len %}...{% endif %}
+                </div>
+                <div class="md-posts-item-info">
+                    <span>
+                        {{ post.date | date: "%b %d" }}
+                        <span class="md-posts-item-dot"></span>
+                        {{ post.content.size | divided_by: site.read_speed }} min read
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

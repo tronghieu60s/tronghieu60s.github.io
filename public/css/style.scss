@@ -48,7 +48,7 @@ a {
 
 ul,
 ol {
-  margin-left: 2 em;
+  margin-left: 2em;
 }
 
 .md-wrapper {
@@ -74,6 +74,38 @@ ol {
     }
   }
 
+  .md-related {
+    margin-top: 50px;
+    &-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-family: "Space Mono", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:before {
+        content: "";
+        width: 150px;
+        height: 2px;
+        background-color: $color_default;
+        margin-right: 20px;
+        @include SM {
+          width: 15%;
+        }
+      }
+      &:after {
+        content: "";
+        width: 150px;
+        height: 2px;
+        background-color: $color_default;
+        margin-left: 20px;
+        @include SM {
+          width: 15%;
+        }
+      }
+    }
+  }
+
   // --- Layout
   .md-sidebar {
     position: fixed;
@@ -92,14 +124,10 @@ ol {
     &-user {
       padding: 20px;
       &-name {
-        display: block;
         color: #000;
         font-size: 1.6em;
         font-weight: 700;
         transition: 0.4s;
-        &:hover {
-          color: $color_url;
-        }
       }
       &-avatar {
         width: $size-avatar;
@@ -156,6 +184,7 @@ ol {
         list-style-type: none;
         display: flex;
         justify-content: center;
+        margin: 0;
         li {
           margin: 0 $width-sidebar / 18;
         }
@@ -218,6 +247,10 @@ ol {
     }
     &.show {
       display: block;
+    }
+    &-cover {
+      padding-top: 10px;
+      margin-top: auto;
     }
     &-copyright {
       font-size: 14px;
@@ -387,7 +420,7 @@ ol {
         }
       }
       &-cover {
-        height: 160px;
+        height: 170px;
         display: block;
         overflow: hidden;
         border-radius: 10px;
@@ -430,7 +463,7 @@ ol {
 
       // MD --> SM --> XS
       @include MD {
-        width: 70%;
+        width: 43%;
       }
       @include SM {
         width: 43%;

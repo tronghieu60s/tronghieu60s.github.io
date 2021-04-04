@@ -1,13 +1,19 @@
 <section class="md-sidebar">
     <div class="md-sidebar-user">
         <img class="md-sidebar-user-avatar" src="/public/images/avatar.png" alt="" />
-        <a href="/profile" class="md-sidebar-user-name">{{ site.title }}</a>
+        <div class="md-sidebar-user-name">{{ site.title }}</div>
         <p class="md-sidebar-user-mini">{{ site.slogan }}</p>
         <p class="md-sidebar-user-desc">{{ site.description }}</p>
     </div>
     <div class="md-sidebar-contact">
         <h4 class="md-sidebar-contact-title"><span>Contact Me</span></h4>
         <ul class="md-sidebar-contact-list">
+            {% if site.social.profile %}
+            <li>
+                <a href="{{ site.social.profile }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            </li>
+            {% endif %}
             {% if site.social.facebook %}
             <li>
                 <a href="https://facebook.com/{{ site.social.facebook }}" target="_blank">

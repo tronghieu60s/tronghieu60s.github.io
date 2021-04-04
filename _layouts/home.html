@@ -5,12 +5,10 @@
 
 <body>
     <div class="md-wrapper">
-        <section class="md-container">
-            {% include topbar.html %}
-            {{ content }}
-        </section>
+        {% include sidebar.html %}
+        {{ content }}
         <section class="md-footer-cover">
-            <footer class="md-footer show">
+            <footer class="md-footer">
                 <div class="md-footer-copyright">
                     {% include footer.html %}
                 </div>

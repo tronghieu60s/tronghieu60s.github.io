@@ -6,10 +6,13 @@ description: I am a web developer focusing on front-end development. Always hung
 read_speed: 300 # words per minute
 excerpt_len: 100 # length of expert post
 
+# social recommend 5 items
 social:
+  # url
+  profile: https://tronghieuit.com/profile/
   # username
   facebook: tronghieu60s
-  instagram: tronghieu60s
+  instagram:
   linkedin: tronghieu60s
   github: tronghieu60s
   #email address
