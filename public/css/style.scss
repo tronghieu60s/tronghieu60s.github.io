@@ -8,13 +8,13 @@ $size-avatar: 90px;
 $size-title: 1.6em;
 $size-title-post: 1.15em;
 $width-sidebar: 270px;
-$width_post: 270px;
+$width_post: 285px;
 $color_url: #5e72e4;
 $color_default: #000;
 $color-background: #f5f6fa;
 
 // Variable Width Responsive
-$max-width: 1200px;
+$max-width: 900px;
 $xs-width: 576px;
 $small-width: 768px;
 $medium-width: 992px;
@@ -275,7 +275,8 @@ ol {
       margin-bottom: 20px;
     }
     @include SM {
-      width: 100%;
+      width: 95%;
+      margin: auto;
       padding-bottom: 0px;
     }
   }
@@ -383,7 +384,7 @@ ol {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 0 10px;
     @include SM {
       padding: 0 10px;
@@ -405,8 +406,7 @@ ol {
       }
     }
     &-item {
-      width: $width_post;
-      margin: 0 12px;
+      width: 43%;
       margin-bottom: 30px;
       position: relative;
       &-img {
@@ -420,7 +420,7 @@ ol {
         }
       }
       &-cover {
-        height: 170px;
+        height: 150px;
         display: block;
         overflow: hidden;
         border-radius: 10px;

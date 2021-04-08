@@ -40,10 +40,12 @@ title: Trang Chủ
         </div>
         {% endfor %}
     </div>
+    {% if paginator.total_pages > 1 %}
     <div class="md-pagination">
         <a {% if paginator.previous_page %} class="active" {% endif %} href="{{ paginator.previous_page_path }}">←
             Newer</a>
         <div class="md-pagination-page">Page: {{ paginator.page }} of {{ paginator.total_pages }}</div>
         <a {% if paginator.next_page %} class="active" {% endif %} href="{{ paginator.next_page_path }}">Older →</a>
     </div>
+    {% endif %}
 </section>

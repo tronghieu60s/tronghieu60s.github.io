@@ -32,7 +32,7 @@ layout: default
 <div class="md-related">
     <h3 class="md-related-title">Related Posts</h3>
     <div class="md-posts">
-        {% assign relatedPosts = site.related_posts | slice: 0, 3 %}
+        {% assign relatedPosts = site.related_posts | slice: 0, 4 %}
         {% for post in relatedPosts %}
         <div class="md-posts-item">
             <a href="{{ post.url }}" class="md-posts-item-cover">
