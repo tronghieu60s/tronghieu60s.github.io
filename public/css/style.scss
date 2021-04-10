@@ -1,532 +1,173 @@
-// Font
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
-
-// Variable
-$size-avatar: 90px;
-$size-title: 1.6em;
-$size-title-post: 1.15em;
-$width-sidebar: 270px;
-$width_post: 285px;
-$color_url: #5e72e4;
-$color_default: #000;
-$color-background: #f5f6fa;
-
-// Variable Width Responsive
-$max-width: 900px;
-$xs-width: 576px;
-$small-width: 768px;
-$medium-width: 992px;
-
-// Mixin Responsive
-@mixin MD {
-  @media (max-width: #{$medium-width}) {
-    @content;
-  }
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=vietnamese");
+:root {
+  --primary: #5e72e4;
+  --danger: #f5365c;
+  --success: #2dce89;
+  --warning: #fb6340;
 }
-@mixin SM {
-  @media (max-width: #{$small-width}) {
-    @content;
-  }
-}
-@mixin XS {
-  @media (max-width: #{$xs-width}) {
-    @content;
-  }
-}
-
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
-
+html,
+body {
+  background-color: #f4f5f7;
+}
 a {
-  color: $color_url;
-  text-decoration: none;
+  color: var(--primary);
+  &:hover {
+    color: var(--primary);
+  }
 }
-
-ul,
-ol {
-  margin-left: 2em;
+.text {
+  &-danger {
+    color: var(--danger);
+  }
+  &-success {
+    color: var(--success);
+  }
+  &-warning {
+    color: var(--warning);
+  }
 }
-
-.md-wrapper {
-  width: 100%;
-  height: 100vh;
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: none;
+}
+::selection {
+  background-color: #ffa;
+  color: #000;
+}
+.author {
   display: flex;
-  flex-direction: column;
-
-  .md-404 {
-    height: 100%;
+  justify-content: space-around;
+  text-align: center;
+  margin: 2em 0 1em 0;
+  @media (min-width: 768px) {
+    & {
+      display: block;
+      text-align: left;
+      margin: inherit;
+      &__avt {
+        width: 50% !important;
+      }
+      &__name {
+        font-size: 2em !important;
+      }
+      &__description {
+        font-size: 1em !important;
+      }
+    }
+  }
+  &__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    font-family: "Space Mono", monospace;
-    text-align: center;
-    padding: 0 30px;
-    h1 {
-      font-size: 5em;
-    }
-    p {
-      font-size: 1.2em;
-    }
   }
-
-  .md-related {
-    margin-top: 50px;
-    &-title {
-      text-align: center;
-      margin-bottom: 30px;
-      font-family: "Space Mono", monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      &:before {
-        content: "";
-        width: 150px;
-        height: 2px;
-        background-color: $color_default;
-        margin-right: 20px;
-        @include SM {
-          width: 15%;
-        }
-      }
-      &:after {
-        content: "";
-        width: 150px;
-        height: 2px;
-        background-color: $color_default;
-        margin-left: 20px;
-        @include SM {
-          width: 15%;
-        }
-      }
-    }
+  &__avt {
+    width: 35%;
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 5px;
   }
-
-  // --- Layout
-  .md-sidebar {
-    position: fixed;
-    width: $width-sidebar;
-    height: 100vh;
+  &__description {
+    font-size: 0.9em;
+    margin-bottom: 0;
+  }
+  &__name {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  &__social {
+    list-style-type: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: $color-background;
-    font-family: "Space Mono", monospace;
-    @include SM {
-      position: static;
-      width: 100%;
-      height: 100%;
-    }
-    &-user {
-      padding: 20px;
-      &-name {
-        color: #000;
-        font-size: 1.6em;
-        font-weight: 700;
-        transition: 0.4s;
-      }
-      &-avatar {
-        width: $size-avatar;
-        height: $size-avatar;
-        border-radius: 50%;
-        border: 3px solid $color_default;
-        border-bottom: 0;
-        margin-bottom: 5px;
-      }
-      &-mini {
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #666;
-      }
-      &-desc {
-        font-size: 14px;
-        margin-top: 10px;
-      }
-    }
-    &-contact {
-      padding: 20px;
-      &-title {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 16px;
-        &:before {
-          content: "";
-          left: 0;
-          width: $width-sidebar + 100px;
-          height: 2px;
-          background-color: $color_default;
-          margin-right: 20px;
-        }
-        &:after {
-          content: "";
-          right: 0;
-          width: $width-sidebar + 100px;
-          height: 2px;
-          background-color: $color_default;
-          margin-left: 20px;
-        }
-        span {
-          position: absolute;
-          text-align: center;
-          background-color: #f5f6fa;
-          padding: 0 20px;
-        }
-      }
-      &-list {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        li {
-          margin: 0 $width-sidebar / 18;
-        }
-        i.fa {
-          color: #444;
-          font-size: 18px;
-          cursor: pointer;
-          &:hover {
-            color: $color_url;
-          }
-        }
-      }
-      &-copyright {
-        font-size: 13px;
-        margin-top: 10px;
-        text-align: center;
-        a:hover {
-          text-decoration: underline;
-        }
-      }
-      @include SM {
-        padding-top: 0;
-        &-list {
-          justify-content: flex-start;
-          li {
-            margin-left: 0px;
-            margin-right: 20px;
-          }
-        }
-        &-title,
-        &-copyright {
-          display: none;
-          a:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-  .md-top_bar {
-    display: flex;
-    align-items: center;
-    font-family: "Space Mono", monospace;
-    padding: 20px 30px;
-    margin-bottom: 20px;
-    &-title {
-      color: #000;
-      font-weight: 700;
-      font-size: 1.3em;
-    }
-  }
-  .md-footer {
-    display: none;
-    background-color: $color-background;
-    font-family: "Space Mono", monospace;
-    padding: 15px 0px;
-    margin-top: 30px;
-    @include SM {
-      display: block;
-    }
-    &.show {
-      display: block;
-    }
-    &-cover {
-      padding-top: 10px;
-      margin-top: auto;
-    }
-    &-copyright {
-      font-size: 14px;
+    margin-bottom: 40px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    li {
+      margin-top: 10px;
+      margin-right: 6px;
+      font-size: 1.2em;
       text-align: center;
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  // --- Page
-  .md-container {
-    width: 100%;
-  }
-  .md-home {
-    font-family: "Open Sans", sans-serif;
-    width: calc(100% - #{$width-sidebar});
-    line-height: 150%;
-    padding-top: 20px;
-    margin-left: auto;
-    @media (min-width: #{$xs-width}) {
-      margin-bottom: 20px;
-    }
-    @include SM {
-      width: 95%;
-      margin: auto;
-      padding-bottom: 0px;
-    }
-  }
-  .md-blog_single {
-    width: 700px;
-    margin: auto;
-    font-family: "Montserrat", sans-serif;
-    @include SM {
-      width: 87%;
-    }
-    &-title {
-      font-size: $size-title;
-      font-family: "Space Mono", monospace;
-      &:before {
-        content: "#";
-        color: #ccc;
-        margin-right: 4px;
-        margin-left: -20px;
-        font-weight: normal;
-      }
-    }
-    &-info {
-      color: #757575;
-      text-transform: capitalize;
-      font-size: 13.5px;
-      margin-top: 4px;
-      font-family: "Space Mono", monospace;
-      i.fa.fa-star {
-        font-size: 10px;
-      }
-    }
-    &-image {
-      width: 100%;
-      height: 400px;
-      background-size: cover;
-      background-position: 50% 50%;
-      margin-top: 20px;
-      border-radius: 10px;
-      @include SM {
-        height: 300px;
-      }
-      @include XS {
-        height: 200px;
-      }
-    }
-    &-content {
-      line-height: 180%;
-      text-align: justify;
-      word-wrap: break-word;
-      margin-top: 20px;
-      p {
-        margin: 24px 0;
-      }
-    }
-  }
-  .md-categories {
-    width: 700px;
-    margin: auto;
-    @include SM {
-      width: 87%;
-    }
-    &-title {
-      font-size: $size-title;
-      font-family: "Space Mono", monospace;
-      margin-bottom: 20px;
-      &:before {
-        content: "#";
-        color: #ccc;
-        margin-right: 8px;
-        margin-left: -20px;
-        font-weight: normal;
-      }
-    }
-    .md-posts {
-      display: block;
-      &-item {
-        width: 100%;
-        margin-bottom: 20px;
-        &-title {
-          font-size: 1.15em;
-          font-weight: 600;
-          color: $color_url;
-          font-family: "Space Mono", monospace;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-        &-info {
-          font-size: 12px;
-          a {
-            color: #000;
-            text-transform: capitalize;
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // --- Other Components
-  .md-posts {
-    max-width: $max-width;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0 10px;
-    @include SM {
-      padding: 0 10px;
-    }
-    &-categories {
-      position: absolute;
-      top: 5px;
-      left: 10px;
-      font-family: "Space Mono", monospace;
-      &-item {
-        font-size: 11px;
-        text-align: center;
-        text-transform: capitalize;
-        color: white;
-        background-color: $color_url;
-        border-radius: 3px;
-        padding: 2px 7px;
-        margin-right: 2px;
-      }
-    }
-    &-item {
-      width: 43%;
-      margin-bottom: 30px;
-      position: relative;
-      &-img {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: 50% 50%;
-        transition: 1s;
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-      &-cover {
-        height: 150px;
-        display: block;
-        overflow: hidden;
-        border-radius: 10px;
-      }
-      &-title {
-        color: $color_default;
-        font-size: $size-title-post;
-        font-weight: 700;
-        transition: 0.4s;
-        &:hover {
-          color: $color_url;
-        }
-      }
-      &-summary {
-        color: #757575;
-        font-size: 14px;
-        margin-top: 5px;
-      }
-      &-content {
-        margin-top: 15px;
-        font-family: "Open Sans", sans-serif;
-      }
-      &-info {
-        color: #757575;
-        font-size: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 3px;
-        i.fa.fa-star {
-          font-size: 10px;
-        }
-      }
-      &-dot {
-        &:before {
-          content: "·";
-          margin: 0px 3px;
-        }
-      }
-
-      // MD --> SM --> XS
-      @include MD {
-        width: 43%;
-      }
-      @include SM {
-        width: 43%;
-      }
-      @include XS {
-        width: 100%;
-      }
-    }
-  }
-  .md-pagination {
-    font-family: "Space Mono", monospace;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px 0;
-    a,
-    &-page {
-      color: #777;
-      pointer-events: none;
-      &.active {
-        color: $color_url;
-        pointer-events: all;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-  .md-tags {
-    font-family: "Space Mono", monospace;
-    &-item {
-      color: #000;
-      display: inline-block;
-      font-weight: 500;
-      font-size: 14px;
-      background: $color-background;
-      padding: 5px 10px;
-      margin-right: 5px;
-      margin-bottom: 10px;
-      border-radius: 5px;
+      cursor: pointer;
       transition: 0.4s;
       &:hover {
+        transform: translateY(-1px);
+      }
+      a {
         color: #fff;
-        background-color: $color_url;
+        background-color: #1e1f26;
+        padding: 6px 12px;
+        border-radius: 4px;
+        transition: 0.4s;
+        &:hover {
+          background-color: var(--danger);
+        }
       }
     }
   }
 }
 
-// ScrollBar
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+.list {
+  &--contact {
+    width: 100%;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.6em;
+    margin-bottom: 0.6em;
+    &:after {
+      content: "";
+      display: block;
+      width: 3em;
+      border-bottom: 2px solid #000;
+    }
+  }
+  &__skill {
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  &__date {
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 7px;
+  }
+  &__deskill {
+    font-size: 0.9em;
+    list-style-type: none;
+    li:before {
+      content: "- ";
+      margin-left: 1em;
+    }
+  }
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
 ::-webkit-scrollbar-track {
   background: #f4f5f7;
 }
 
+/* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
   background: #2b2e34;
 }
 
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
