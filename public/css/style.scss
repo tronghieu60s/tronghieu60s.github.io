@@ -152,31 +152,18 @@ a {
 }
 
 .signature {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  z-index: 10;
-  animation: sign-hide 2s forwards 2s;
-  svg {
-    stroke-dasharray: 1033;
-    stroke-dashoffset: 1033;
-    animation: sign 2s ease forwards;
-  }
+  display: block;
+  stroke-dasharray: 1033;
+  stroke-dashoffset: 1033;
+  animation: sign 2s ease alternate infinite;
 }
 
 @keyframes sign {
+  from {
+    stroke-dashoffset: 1033;
+  }
   to {
     stroke-dashoffset: 0;
-  }
-}
-
-@keyframes sign-hide {
-  to {
-    transform: translateY(-100%);
   }
 }
 
