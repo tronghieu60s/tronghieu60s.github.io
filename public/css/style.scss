@@ -12,7 +12,15 @@
 }
 html,
 body {
-  background-color: #f4f5f7;
+  background: #fff;
+  color: #000;
+  font-family: "Merriweather", serif;
+  background-image: radial-gradient(#ddd 1px, transparent 0),
+    radial-gradient(#ddd 1px, transparent 0);
+  background-position: 0 0, 25px 25px;
+  background-attachment: fixed;
+  background-size: 50px 50px;
+  overflow-x: hidden;
 }
 a {
   color: var(--primary);
@@ -39,6 +47,11 @@ a {
   background-color: #ffa;
   color: #000;
 }
+
+.wrapper {
+  max-width: 800px;
+}
+
 .author {
   display: flex;
   justify-content: space-around;
