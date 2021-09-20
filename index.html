@@ -8,7 +8,7 @@
     <meta name="author" content="Tran Trong Hieu">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f4f5f7">
-    <link rel="icon" href="./public/images/favicon.png" />
+    <link rel="icon" href="./public/images/favicon.ico" />
     <!-- Bootstrap CDN, Font Awesome -->
     <link rel="stylesheet" href="./public/vendor/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/vendor/css/font-awesome.css">
@@ -18,7 +18,7 @@
 
 <body>
     <div class="wrapper container">
-        <div class="row mt-0 mt-md-5">
+        <div class="row mt-0 mt-md-5 mb-4">
             <div class="col-md-12">
                 <div class="author">
                     <div class="author__info">
@@ -51,24 +51,33 @@
                 <div class="list mt-4">
                     <h3 class="list__title">Summary</h3>
                     <p class="list__description">
-                        I'm <strong class="">Trần Trọng Hiếu</strong>. I was born in 2001. I'm studying IT at Thu
-                        Duc College of Technology. I like learning new technology and listen to music. I&#39;m a careful
-                        and hard-working person, eager to learn new things and willing to work in a team.
-                        </span>
+                    <div>
+                        - I'm <strong class="">Trần Trọng Hiếu</strong>. I'm studying IT at Thu
+                        Duc College of Technology.
+                    </div>
+                    <div class="mt-1">
+                        - I&#39;m a hard-working person, eager to learn new things and
+                        willing to work in a team.
+                    </div>
+                    </p>
                 </div>
                 <div class="list mt-4">
                     <h3 class="list__title">Technical Skills</h3>
+                    <h6 class="list__skill">Web Development</h6>
+                    <ul class="list__deskill">
+                        <li>HTML, CSS/SCSS</li>
+                        <li>Bootstrap CSS, Tailwind CSS</li>
+                    </ul>
                     <h6 class="list__skill">Programming Language</h6>
                     <ul class="list__deskill">
-                        <li>HTML5, CSS3, Javascript (Typescript)</li>
+                        <li>Javascript, Typescript</li>
                     </ul>
                     <h6 class="list__skill">Frameworks & platforms</h6>
                     <ul class="list__deskill">
-                        <li>Bootstrap, Tailwind / SCSS</li>
-                        <li>NodeJS: Express (EJS)</li>
-                        <li>ReactJS: Redux, NextJS</li>
-                        <li>Mobile: React Native</li>
-                        <li>Desktop: ElectronJS</li>
+                        <li>NodeJS</li>
+                        <li>ReactJS, NextJS</li>
+                        <li>Redux, Recoil</li>
+                        <li>React Native</li>
                     </ul>
                     <h6 class="list__skill">Database</h6>
                     <ul class="list__deskill">
@@ -115,7 +124,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="list list--contact mt-4">
+                <!-- <div class="list list--contact mt-4">
                     <h3 class="list__title">Contact Me</h3>
                     <form class="form-group contact" action="https://formspree.io/tronghieu60s@gmail.com" method="POST">
                         <label>Name: </label>
@@ -126,17 +135,17 @@
                         <textarea name="Content" class="form-control" aria-describedby="helpId"></textarea>
                         <input class="btn btn-dark mt-2" type="submit" value="Send">
                     </form>
-                </div>
+                </div> -->
             </div>
         </div>
-        <footer class="mt-4 mb-5" style="font-size: 14px;">
+        <!-- <footer class="mt-4 mb-5" style="font-size: 14px;">
             <svg class="signature" width="100" height="100" viewBox="0 0 800 600">
                 <path
                     d="m175,247.90467c0,-1 0.38269,-1.07613 0,-2c-1.62358,-3.91969 -1.16197,-7.214 -3,-15c-1.54123,-6.52875 -3,-10 -3,-14c0,-4 1,-8 3,-10c0,0 7,0 11,0c9,0 16.72398,2.22273 20,6c0.92659,1.06837 1.83981,6.0289 3,12c1.75848,9.05029 2,17 2,24c0,6 0,16 0,24c0,9.00002 0,12.00002 0,22.00002c0,10 0,26 0,40c0,13 -0.78732,23.74747 -3,32c-3.15056,11.75049 -4.75531,29.13202 -7,33c-1.80972,3.11847 -3.21167,4.28589 -6,2c-1.09367,-0.89661 -6,-8 -6,-11c0,-6 -1.40601,-11.22766 4,-16c8.38165,-7.39917 23.36282,-13.54523 36,-24c9.27808,-7.67578 15.54916,-12.95517 19,-14c0.95709,-0.28979 8.94766,13.02844 13,38c0.96109,5.92252 0.17194,7.43936 1,8c4.45929,3.01907 8.11438,-10.92157 17,-24c4.05246,-5.96469 5,-8 5,-8c0,1 -2.28629,10.75031 3,23c4.28583,9.93137 9.08884,15.53778 18,11c12.12048,-6.17206 20.25494,-27.90411 31,-36c7.53467,-5.67703 12.23425,-6.16541 15,-2c4.56137,6.86978 4.767,12.11719 7,12c8.53226,-0.44781 10.43448,-28.13739 7,-71c-2.50803,-31.30034 -4.1882,-55.44949 -10,-75.00002c-3.06897,-10.32382 -6,-12 -4,-12c30,0 72.1048,2.74503 108,0c26.22931,-2.00584 46,-4 54,-4c4,0 5,0 6,0c1,0 2,0 3,0c5,0 15.0484,-0.32524 43,4c24.04486,3.72072 46,10 57,10c7,0 10,0 11,0l1,0"
                     id="svg_8" stroke-width="5" stroke="#000" fill="none" />
             </svg>
             &copy; 2020 | Trần Trọng Hiếu
-        </footer>
+        </footer> -->
     </div>
 </body>
 
